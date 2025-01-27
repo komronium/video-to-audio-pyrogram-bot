@@ -1,0 +1,7 @@
+.fleet/
+__pycache__/
+env/
+
+.env
+*.db
+*.session*
