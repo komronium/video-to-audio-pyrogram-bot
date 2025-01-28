@@ -73,3 +73,4 @@ class UserService:
     
     def get_active_user_count(self):
         count = self.session.query(User).filter(User.conversion_count > 0).count()
+        return count
