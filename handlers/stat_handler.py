@@ -16,10 +16,10 @@ async def stat_command(client: Client, message: Message):
 
     response_message = (
         "<b>BOT STATISTICS</b>\n\n"
-        f"Total Users:  <b>{user_count}</b>\n"
+        f"Total Users:  <b>{user_count}</b> ({round(active_user_count / user_count * 100)}%)\n"
         f"Active Users:  <b>{active_user_count}</b>\n"
         f"Users Joined Today:  <b>{today_joined_user_count}</b>\n"
-        f"Total Conversions:  <b>{conversion_count}</b>\n"
+        f"Total Conversions:  <b>{conversion_count}</b> ({round(conversion_count / active_user_count, 1)} each)\n"
     )
 
     await client.send_message(message.chat.id, response_message)
