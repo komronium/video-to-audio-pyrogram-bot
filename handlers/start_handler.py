@@ -11,6 +11,6 @@ async def start_command(client: Client, message: Message):
         "Welcome to Video to Audio Bot! 🎵\n"
         "Send me any video and I'll convert it to audio.",
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Channel", url=f"https://t.me/{settings.CHANNEL_ID}")]
+            [InlineKeyboardButton("Channel", url=f"https://t.me/{settings.CHANNEL}")]
         ])
     )

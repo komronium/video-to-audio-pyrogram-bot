@@ -8,7 +8,7 @@ from config import settings
 @Client.on_callback_query(filters.regex('^check_subscription$'))
 async def check_subscription(client: Client, callback: CallbackQuery):
     try:
-        user = await client.get_chat_member(settings.CHANNEL_ID, callback.from_user.id)
+        user = await client.get_chat_member(settings.CHANNEL, callback.from_user.id)
         if user.status not in [ChatMemberStatus.MEMBER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]:
             await callback.answer('❌ You haven\'t subscribed to the channel yet!', show_alert=True)
             return

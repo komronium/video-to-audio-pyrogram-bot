@@ -1,9 +1,8 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message
 
 from services.user_service import UserService
 from utils.decorators import check_subscription
-from config import settings
 
 
 @Client.on_message(filters.command("top"))

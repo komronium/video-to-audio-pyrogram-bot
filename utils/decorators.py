@@ -34,7 +34,7 @@ def check_subscription(func):
             )
 
         try:
-            user = await client.get_chat_member(settings.CHANNEL_ID, message.from_user.id)
+            user = await client.get_chat_member(settings.CHANNEL, message.from_user.id)
             if user.status in [ChatMemberStatus.MEMBER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]:
                 return await func(client, message, *args, **kwargs)
             else:

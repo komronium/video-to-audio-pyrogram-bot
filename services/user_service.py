@@ -70,3 +70,6 @@ class UserService:
     def get_conversion_count(self):
         count = self.session.query(func.sum(User.conversion_count)).scalar()
         return count    
+    
+    def get_active_user_count(self):
+        count = self.session.query(User).filter(User.conversion_count > 0).count()
